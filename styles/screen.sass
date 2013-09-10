@@ -2,78 +2,123 @@
 @import '_mixins'
 @import '_variables'
 
-// reset
-
-@media screen and (max-device-width: 480px)
-  html
-    -webkit-text-size-adjust: 100%
-    -ms-text-size-adjust: 100%
+// Base
+//============================================================
+body
+  color: $text_normal
+  font-family: $source
+  font-size: $fs_normal
+  background: #fff 
+  padding-left: $sidebar_width
 
 *
-  box-sizing: border-box
+  @include box-sizing(border-box)
 
-ul
+::selection
+  background: $blue
+  color: #fff
+
+ul, ol, li
+  margin: 0
   padding: 0
-
-li
-  list-style-type: none
-
-// base
-
-body
-  font: 400 100%/1.65 $base-font
-  text-rendering: optimizeLegibility
+  list-style: none
 
 img
   max-width: 100%
 
-a
+
+// Modules
+//============================================================
+.button, button
+  @include user-select(none)
+  @include antialias
+  padding: 11px 20px
+  background: $green
+  box-shadow: 0 2px 0 darken($green, 13%)
+  border: 0 none
+  border-radius: 3px
+  color: #fff
+  font-weight: bold
+  font-size: $fs_normal
+  text-align: center
   text-decoration: none
-
-  img
-    vertical-align: top
-
-pre
-  padding: 2em
-
-// main
-
-.main-header, .main-footer
-  margin: 4em
-  text-align: center
-
-.main-content
-  +clearfix
-  width: 64em
-  margin: 0 auto
-
-// button
-
-button, input[type="button"], input[type="submit"]
-  +transition(all .05s ease-out)
-  padding: 1.125em 3em
-  border: 0
-  border-bottom: 2px solid rgba(39,65,90,.3)
-  color: white
-  text-align: center
-  border-radius: 0.1875em
-  -moz-border-radius: 0.1875em
+  display: inline-block
   cursor: pointer
 
-.large-button
-  width: 100%
-  max-width: 8em
-  padding: 0.5em 1em
-  margin: 1em auto
-  float: center
-  display: block
-  font-weight: 300
-  font-size: 2em
+  &:hover
+    background: darken($green, 4%)
+    text-decoration: none
 
-.green-button
-  background-color: $green
+  &:focus, &:active
+    box-shadow: inset 0 2px 2px rgba(#000, 0.1)
+    position: relative
+    top: 2px
+    outline: none
+
+  &.secondary
+    box-shadow: 0 2px 0 darken($blue, 13%)
+    background: $blue
+
+    &:hover
+      background: darken($blue, 4%)
+
+    &:focus, &:active
+      box-shadow: inset 0 2px 2px rgba(#000, 0.1)
+
+  
+  &.is-loading, &.is-disabled
+    background: $bg_disabled
+    color: #f0f1f6
+    box-shadow: none
+    pointer-events: none
+
+  em
+    font-weight: normal
+    font-style: normal
+
+
+// Labs nav
+//============================================================
+.labs-nav
+  background: $bg_smoke
+  padding: 30px 0
+  position: fixed
+  left: 0
+  top: 0
+  width: $sidebar_width
+  height: 100%
+  overflow: auto
+  // text-align: center
+
+  a
+    display: block
+    text-decoration: none
+    color: $text_dark
+    padding: 10px 30px
+
+  .ss-icon
+    @extend %smallNavIcon
+    margin-right: 5px
+ 
+
+
+// Main content
+//============================================================
+.main-content
+  padding: $gutter
+  width: 90%
+  margin: auto
+  max-width: 1200px
+
+.main-footer
+  clear: both
+  display: block
+  text-align: center
+  padding: $gutter 15px
+
+
 
 // device
-
+//============================================================
 .iphone5-wrapper
   max-width: 418px

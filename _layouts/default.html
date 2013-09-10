@@ -18,15 +18,31 @@
     <link href="//cdn.symbolset.com/{{ site.meta.symbolset_id }}/symbolset.css" rel="stylesheet">
     <link href='/styles/screen.css' rel='stylesheet'>
 
+    <script src="//use.typekit.net/{{ site.meta.typekit_id }}.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
     {{ head }}
   </head>
 
   <body class='{{ type }}'>
-    <header class='main-header'>
-      <h1>{{ site.title }}</h1>
-    </header>
-
-    {{ content }}
+    <nav class="labs-nav">
+      {% for page in site.pages %}
+        <a href='{{ page.url }}'{% if slug == page.slug || slug == parent.slug %} class="is-current"{% endif %}>
+          <span class="ss-icon"{% if page.meta.color %} style="background-color:{{ page.meta.color }}"{% endif %}>
+            {% if page.meta.icon %}
+              {{ page.meta.icon }}
+            {% else %}
+              file
+            {% endif %}
+          </span>
+          {{ page.title }}
+        </a>
+      {% endfor %}
+    </nav>
+    
+    <section class="main-content">
+      {{ content }}
+    </section>
 
     <footer class='main-footer'>
       &copy; {{ site.date | date: '%Y' }} Oak Studios, LLC. All Rights Reserved
