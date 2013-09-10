@@ -1,4 +1,4 @@
-siteleaf-labs
+Siteleaf Labs
 =============
 
 Experiments with Siteleaf

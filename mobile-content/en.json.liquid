@@ -1,0 +1,15 @@
+{% assign pages = site.pages.mobile-content.pages.en.pages %}
+{
+  {% for page in pages %}
+  "{{ page.slug }}": {
+    "title": "{{ page.title }}",
+    "slug": "{{ page.slug }}",
+    "body": "{{ page.body | strip_newlines }}",
+    "meta": {
+      {% for meta in page.meta %}
+      "{{ meta.key }}": "{{ meta.value }}"{% unless meta == page.meta.last %},{% endunless %}
+      {% endfor %}
+    }
+  }{% unless page == pages.last %},{% endunless %}
+  {% endfor %}
+}

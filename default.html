@@ -1,0 +1,13 @@
+{% capture content %}
+<nav class='main-nav'>
+  <ul class='main-nav-list'>
+    {% for page in pages %}
+    <li>
+      <a href='{{ page.url }}'>{{ page.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endcapture %}
+
+{% include 'layouts/default' %}

@@ -1,0 +1,88 @@
+{% capture head %}
+<link href='/styles/device-mockups.css' rel='stylesheet'>
+<link href='//yandex.st/highlightjs/7.3/styles/default.min.css' rel='stylesheet'>
+<link href='/styles/{{ parent.slug }}.css' rel='stylesheet'>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+<script src='{{ parent.url }}/js/jquery.text.fadeto.js'></script>
+<script src='/js/libs/spine.js'></script>
+<script src='/js/libs/spine-route.js'></script>
+<script src='/js/libs/spine-manager.js'></script>
+<script src='//yandex.st/highlightjs/7.3/highlight.min.js'></script>
+<script src='{{ parent.url }}/js/mobile-content.js'></script>
+{% endcapture %}
+
+{% capture content %}
+<div class='main-content'>
+  <section class='device-section iphone5-wrapper'>
+    <div class='device-mockup iphone5 portrait white'>
+      <div class='device'>
+        <div id='app-view' class='screen'>
+          <header class='app-header'>
+            <h1></h1>
+            <a class='app-back-button back ss-navigateleft' href='#'></a>
+          </header>
+          <div class='app-content'>
+            <div class='app-sections'>
+              <section id='home-view' class='app-section app-section-home' data-title='Siteleaf'>
+                <nav class='app-nav'>
+                  <ul>
+                    {% for page in current.pages %}
+                    <li class='nav-item' data-slug='{{ page.slug }}'>
+                      <span class='title'>{{ page.title }}</span>
+                      <span class='arrow ss-navigateright'></span>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </nav>
+              </section>
+
+              {% assign page = current.pages.about %}
+              <section id='about-view' class='app-section app-section-about' data-title='{{ page.title }}'>
+                <img class='logo' src='{{ page.meta.logo }}'>
+                {{ page.body }}
+                <button class='green-button large-button' onclick='window.open("{{ page.meta.support_url }}")'>{{ page.meta.support_button }}</button>
+              </section>
+
+              {% assign page = current.pages.terms %}
+              <section id='terms-view' class='app-section app-section-terms' data-title='{{ page.title }}'>
+                {{ page.body }}
+              </section>
+              <!-- {% for page in current.pages %}
+              <section id='{{ page.slug }}-view' class='app-section app-section-{{ page.slug }}' data-title='{{ page.title }}'>
+                {{ page.body_raw }}
+              </section>
+              {% endfor %}-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class='code-sections'>
+    {% for page in current.pages %}
+    <section id='{{ page.slug }}-code' class='code-section'>
+      <pre>
+        <code class='json'>{
+  "{{ page.slug }}": {
+    "title": "{{ page.title }}",
+    "slug": "{{ page.slug }}",
+    "body": "{{ page.body | strip_newlines | xml_escape }}",
+    "meta": {
+      {% for meta in page.meta %}"{{ meta.key }}": "{{ meta.value }}"{% unless meta == page.meta.last %},
+      {% endunless %}{% endfor %}
+    }
+  }
+}</code>
+      </pre>
+    </section>
+    {% endfor %}
+  </div>
+</div>
+<script>
+$(document).ready(function() {
+  hljs.initHighlightingOnLoad();
+});
+</script>
+{% endcapture %}
+
+{% include 'layouts/default' %}

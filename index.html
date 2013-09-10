@@ -1,0 +1,15 @@
+{% capture content %}
+<nav class='main-nav'>
+  <ul class='main-nav-list'>
+    {% for page in site.pages %}
+    {% if page != site.pages.first %}
+    <li>
+      <a href='{{ page.url }}'>{{ page.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+{% endcapture %}
+
+{% include 'layouts/default' %}

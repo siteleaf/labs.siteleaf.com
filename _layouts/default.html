@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+
+    <title>{{ site.title }} - {{ current.title }}</title>
+
+    <meta property="twitter:account_id" content="{{ site.meta.twitter_id }}">
+    <meta name='description' content='{{ site.meta.description }}'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <link rel='icon shortcut' href='/images/favicon.ico'>
+
+    <link type="application/rss+xml" rel="alternate" title="{{ site.title }}" href="feed.xml">
+    {% include 'includes/fonts' %}
+    <link href="//cdn.symbolset.com/{{ site.meta.symbolset_id }}/symbolset.css" rel="stylesheet">
+    <link href='/styles/screen.css' rel='stylesheet'>
+
+    {{ head }}
+  </head>
+
+  <body class='{{ type }}'>
+    <header class='main-header'>
+      <h1>{{ site.title }}</h1>
+    </header>
+
+    {{ content }}
+
+    <footer class='main-footer'>
+      &copy; {{ site.date | date: '%Y' }} Oak Studios, LLC. All Rights Reserved
+    </footer>
+
+    <script src="//cdn.symbolset.com/{{ site.meta.symbolset_id }}/symbolset.js"></script>
+  </body>
+</html>

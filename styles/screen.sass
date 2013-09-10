@@ -1,0 +1,79 @@
+@import '_normalize'
+@import '_mixins'
+@import '_variables'
+
+// reset
+
+@media screen and (max-device-width: 480px)
+  html
+    -webkit-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%
+
+*
+  box-sizing: border-box
+
+ul
+  padding: 0
+
+li
+  list-style-type: none
+
+// base
+
+body
+  font: 400 100%/1.65 $base-font
+  text-rendering: optimizeLegibility
+
+img
+  max-width: 100%
+
+a
+  text-decoration: none
+
+  img
+    vertical-align: top
+
+pre
+  padding: 2em
+
+// main
+
+.main-header, .main-footer
+  margin: 4em
+  text-align: center
+
+.main-content
+  +clearfix
+  width: 64em
+  margin: 0 auto
+
+// button
+
+button, input[type="button"], input[type="submit"]
+  +transition(all .05s ease-out)
+  padding: 1.125em 3em
+  border: 0
+  border-bottom: 2px solid rgba(39,65,90,.3)
+  color: white
+  text-align: center
+  border-radius: 0.1875em
+  -moz-border-radius: 0.1875em
+  cursor: pointer
+
+.large-button
+  width: 100%
+  max-width: 8em
+  padding: 0.5em 1em
+  margin: 1em auto
+  float: center
+  display: block
+  font-weight: 300
+  font-size: 2em
+
+.green-button
+  background-color: $green
+
+// device
+
+.iphone5-wrapper
+  max-width: 418px

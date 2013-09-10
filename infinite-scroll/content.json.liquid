@@ -1,0 +1,7 @@
+[{% for post in site.pages.infinite-scroll.posts %}
+{
+  "title": "{{ post.title }}",
+  "image": "{{ post.assets.first.url }}",
+  "tags": {{ post.taxonomy.tags.tags | json }}
+  }{% unless post == site.pages.infinite-scroll.posts.last %},{% endunless %}
+{% endfor %}]
