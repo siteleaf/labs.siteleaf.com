@@ -1,0 +1,146 @@
+@import '_mixins'
+@import '_variables'
+
+#app-view
+  .app-back-button
+    opacity: 1
+
+  &.is-home
+    .app-back-button
+      opacity: 0
+
+.app-header
+  background-color: $blue
+  color: white
+  padding: 9px
+  min-height: 2.75em
+  text-align: center
+
+  a
+    color: white
+    text-decoration: none
+
+  .back
+    +transition(opacity 0.5s ease-in-out)
+    position: absolute
+    left: 0.675em
+    top: 0.675em
+
+  h1
+    position: relative
+    top: 3px
+    margin: 0 auto
+    font-size: 1em
+    font-weight: normal
+    max-width: 240px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+.screen
+  background-color: white
+
+.app-content
+  height: 522px
+  overflow: hidden
+
+  h2
+    font-size: 3em
+    font-weight: 300
+    line-height: 1.25em
+    text-align: center
+    margin: 1em 0
+    color: $blue
+
+  a
+    color: $text_green
+
+  p
+    font-size: 0.875em
+
+#app-stack
+  position: relative
+  left: 0
+  height: 100%
+
+.app-section
+  +transition(left 0.5s ease-in-out)
+  position: absolute
+  width: 20em
+  height: 100%
+  padding: 0 0.675em
+  left: 20em
+
+  li:not(.nav-item)
+    margin-bottom: 0.5em
+
+    margin-left: 1.5em
+    list-style: disc
+
+  &.active
+    left: 0
+
+  &.app-section-home
+    left: -20em
+    padding: 0
+
+    &.active
+      left: 0
+
+.app-nav
+  .nav-list
+    margin: 0
+
+  .nav-item
+    cursor: pointer
+    position: relative
+    padding: 0.75em 0.675em
+    border-bottom: dotted 1px lighten(black, 75%)
+
+    .title
+      position: relative
+      top: 0.125em
+
+  .arrow
+    color: $green
+    position: absolute
+    right: 0.675em
+    top: 0.875em
+
+.app-view-footer
+  position: absolute
+  width: 100%
+  bottom: 0
+  background-color: $bg_smoke
+  padding: 0.5em
+  text-align: center
+
+  button
+    margin: 0 0.25em
+
+.device-section
+  position: relative
+  right: 12em
+  width: 40em
+  margin: 0 auto
+
+.code-aside
+  position: fixed
+  top: 0
+  right: 0
+  width: 24em
+  height: 100%
+  padding: 1em
+  background-color: #002B36
+  color: $text_light
+
+  pre
+    margin: 0
+    line-height: 0
+    height: 100%
+    word-wrap: break-word
+
+    code
+      height: 100%
+      font-size: 0.875em
+      line-height: 1.25em

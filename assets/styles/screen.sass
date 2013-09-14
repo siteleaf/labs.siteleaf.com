@@ -8,7 +8,7 @@ body
   color: $text_normal
   font-family: $source
   font-size: $fs_normal
-  background: #fff 
+  background: #fff
   padding-left: $sidebar_width
 
 *
@@ -25,6 +25,13 @@ ul, ol, li
 
 img
   max-width: 100%
+
+a
+  color: $text_green
+  text-decoration: none
+
+  &:hover
+    color: $text_green_hover
 
 
 // Modules
@@ -65,7 +72,7 @@ img
     &:focus, &:active
       box-shadow: inset 0 2px 2px rgba(#000, 0.1)
 
-  
+
   &.is-loading, &.is-disabled
     background: $bg_disabled
     color: #f0f1f6
@@ -76,46 +83,75 @@ img
     font-weight: normal
     font-style: normal
 
+  .ss-icon
+    position: relative
+    top: 3px
+    left: -6px
 
-// Labs nav
+// Main sidebar
 //============================================================
-.labs-nav
+.main-sidebar
   background: $bg_smoke
-  padding: 30px 0
+  padding: 2em 1em
   position: fixed
   left: 0
   top: 0
   width: $sidebar_width
   height: 100%
   overflow: auto
-  // text-align: center
+
+  .logo
+    width: 66px
+    height: 94px
+    background: url(/assets/logo.svg) no-repeat center
+    margin: 0.5em auto 1.5em
+    text-indent: -9999px
+
+    a
+      display: block
+      width: 100%
+      height: 100%
+
+  p
+    font-size: 0.875em
+
+// Labs nav
+//============================================================
+.labs-nav
+  margin-top: 2em
 
   a
     display: block
     text-decoration: none
     color: $text_dark
-    padding: 10px 30px
+    padding: 0.375em 0
 
   .ss-icon
     @extend %smallNavIcon
     margin-right: 5px
- 
+
 
 
 // Main content
 //============================================================
 .main-content
+  position: relative
   padding: $gutter
   width: 90%
   margin: auto
   max-width: 1200px
 
 .main-footer
+  position: absolute
+  left: 1em
+  right: 1em
+  bottom: 0
   clear: both
   display: block
+  font-size: 0.875em
   text-align: center
-  padding: $gutter 15px
-
+  padding: 2em 0
+  color: $text_light
 
 
 // device

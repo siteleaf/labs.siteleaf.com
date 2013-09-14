@@ -7,7 +7,7 @@
 
     <title>{{ site.title }} - {{ current.title }}</title>
 
-    <meta property="twitter:account_id" content="{{ site.meta.twitter_id }}">
+    <meta property="twitter:site" content="{{ site.meta.twitter }}">
     <meta name='description' content='{{ site.meta.description }}'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
@@ -15,39 +15,37 @@
 
     <link type="application/rss+xml" rel="alternate" title="{{ site.title }}" href="feed.xml">
     {% include 'includes/fonts' %}
-    <link href="//cdn.symbolset.com/{{ site.meta.symbolset_id }}/symbolset.css" rel="stylesheet">
-    <link href='/styles/screen.css' rel='stylesheet'>
+    <link href="//cdn.symbolset.com/{{ site.meta.symbolset }}/symbolset.css" rel="stylesheet">
+    <link href='/assets/styles/screen.css' rel='stylesheet'>
 
-    <script src="//use.typekit.net/{{ site.meta.typekit_id }}.js"></script>
+    <script src="//use.typekit.net/{{ site.meta.typekit }}.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
 
     {{ head }}
   </head>
 
   <body class='{{ type }}'>
-    <nav class="labs-nav">
-      {% for page in site.pages %}
-        <a href='{{ page.url }}'{% if slug == page.slug || slug == parent.slug %} class="is-current"{% endif %}>
-          <span class="ss-icon"{% if page.meta.color %} style="background-color:{{ page.meta.color }}"{% endif %}>
-            {% if page.meta.icon %}
-              {{ page.meta.icon }}
-            {% else %}
-              file
-            {% endif %}
-          </span>
-          {{ page.title }}
-        </a>
-      {% endfor %}
-    </nav>
-    
+    <aside class='main-sidebar'>
+      <h1 class='logo'><a href='/'>Siteleaf</a></h1>
+      {{ site.meta.siteleaf-description | md }}
+      <nav class="labs-nav">
+        {% for page in site.pages %}
+          <a href='{{ page.url }}'{% if slug == page.slug || slug == parent.slug %} class="is-current"{% endif %}>
+            <span class="ss-icon ss-gizmo"{% if page.meta.color %} style="background-color:{{ page.meta.color }}"{% endif %}>{{ page.meta.icon | fallback: 'file' }}</span>
+            {{ page.title }}
+          </a>
+        {% endfor %}
+      </nav>
+
+      <footer class='main-footer'>
+        &copy; {{ site.date | date: '%Y' }} Siteleaf&reg; is a registered trademark of Oak Studios, LLC.
+      </footer>
+    </aside>
+
     <section class="main-content">
       {{ content }}
     </section>
 
-    <footer class='main-footer'>
-      &copy; {{ site.date | date: '%Y' }} Oak Studios, LLC. All Rights Reserved
-    </footer>
-
-    <script src="//cdn.symbolset.com/{{ site.meta.symbolset_id }}/symbolset.js"></script>
+    <script src="//cdn.symbolset.com/{{ site.meta.symbolset }}/symbolset.js"></script>
   </body>
 </html>

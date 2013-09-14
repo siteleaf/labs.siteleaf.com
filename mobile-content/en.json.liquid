@@ -1,15 +1,16 @@
-{% assign pages = site.pages.mobile-content.pages.en.pages %}
+{% assign page = site.pages.mobile-content %}
+{% assign pages = page.pages %}
 {
-  {% for page in pages %}
-  "{{ page.slug }}": {
-    "title": "{{ page.title }}",
-    "slug": "{{ page.slug }}",
-    "body": "{{ page.body | strip_newlines }}",
-    "meta": {
-      {% for meta in page.meta %}
-      "{{ meta.key }}": "{{ meta.value }}"{% unless meta == page.meta.last %},{% endunless %}
-      {% endfor %}
-    }
-  }{% unless page == pages.last %},{% endunless %}
-  {% endfor %}
+  "last_updated": "{{ site.date }}",
+  "phone": "{{ page.meta.phone.value }}",
+  "email": "{{ page.meta.email.value }}",
+  "pages": [
+    {% for page in pages %}
+    {
+      "title": "{{ page.title }}",
+      "slug": "{{ page.slug }}",
+      "body": {{ page.body | json }}
+    }{% unless page == pages.last %},{% endunless %}
+    {% endfor %}
+  ]
 }
