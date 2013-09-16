@@ -1,3 +1,11 @@
+Rainbow.extend('javascript', [
+  {
+    'name': 'entity',
+    'pattern': /"[A-Za-z0-9_\-]+"\:/g
+  }
+]);
+
+
 class HomeView extends Spine.Controller
   el: '#home-view'
 
@@ -72,8 +80,9 @@ class AppView extends Spine.Controller
       code = @pages[view.attributes.data.slug]
 
     json = JSON.stringify(code, null, 2)
-    formatted_code = window.hljs.highlight('json', json).value if window.hljs
-    $('#code').html(formatted_code)
+    # formatted_code = window.hljs.highlight('json', json).value if window.hljs
+    Rainbow.color json, 'javascript', (highlighted_code) =>
+      $('#code').html(highlighted_code);
 
   stack_changed: (view) ->
     @updateCode(view)

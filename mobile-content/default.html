@@ -1,12 +1,12 @@
 {% capture head %}
 <link href='/assets//styles/device-mockups.css' rel='stylesheet'>
-<link href='//yandex.st/highlightjs/7.3/styles/solarized_dark.min.css' rel='stylesheet'>
+<link href='/assets/styles/solarized-dark.css' rel='stylesheet'>
 <link href='/assets/styles/{{ slug }}.css' rel='stylesheet'>
 <script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
 <script src='/assets/scripts/libs/spine.js'></script>
 <script src='/assets/scripts/libs/spine-route.js'></script>
 <script src='/assets/scripts/libs/spine-manager.js'></script>
-<script src='/assets/scripts/libs/highlight.js'></script>
+<script src='/assets/scripts/libs/rainbow.js'></script>
 <script src='{{ url }}/assets/scripts/mobile-content.js'></script>
 {% endcapture %}
 
@@ -43,12 +43,9 @@
   <aside class='code-aside'>
     {{ meta.code-sidebar | md }}
     <pre>
-      <code id='code' class='json'></code>
+      <code id='code' data-language='javascript'></code>
     </pre>
   </aside>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
 {% endcapture %}
 
 {% include 'layouts/default' %}

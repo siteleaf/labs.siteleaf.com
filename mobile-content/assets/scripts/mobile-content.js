@@ -3,6 +3,13 @@
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
+  Rainbow.extend('javascript', [
+    {
+      'name': 'entity',
+      'pattern': /"[A-Za-z0-9_\-]+"\:/g
+    }
+  ]);
+
   HomeView = (function(_super) {
     __extends(HomeView, _super);
 
@@ -120,17 +127,17 @@
     };
 
     AppView.prototype.updateCode = function(view) {
-      var code, formatted_code, json;
+      var code, json,
+        _this = this;
       if (view === this.stack.home) {
         code = this.homeData;
       } else {
         code = this.pages[view.attributes.data.slug];
       }
       json = JSON.stringify(code, null, 2);
-      if (window.hljs) {
-        formatted_code = window.hljs.highlight('json', json).value;
-      }
-      return $('#code').html(formatted_code);
+      return Rainbow.color(json, 'javascript', function(highlighted_code) {
+        return $('#code').html(highlighted_code);
+      });
     };
 
     AppView.prototype.stack_changed = function(view) {
