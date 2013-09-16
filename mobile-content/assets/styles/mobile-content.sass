@@ -1,7 +1,10 @@
 @import '_mixins'
 @import '_variables'
 
-#app-view
+.main-content
+  min-width: 800px
+
+.app-view
   .app-back-button
     opacity: 1
 
@@ -24,7 +27,7 @@
     +transition(opacity 0.5s ease-in-out)
     position: absolute
     left: 0.675em
-    top: 0.675em
+    top: 0.75em
 
   h1
     position: relative
@@ -58,7 +61,7 @@
   p
     font-size: 0.875em
 
-#app-stack
+.app-stack
   position: relative
   left: 0
   height: 100%

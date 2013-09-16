@@ -1,4 +1,5 @@
 .*
+*.psd
 Gemfile*
 Guardfile
 LICENSE
