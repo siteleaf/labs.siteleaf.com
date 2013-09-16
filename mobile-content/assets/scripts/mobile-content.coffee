@@ -72,7 +72,7 @@ class AppView extends Spine.Controller
       code = @pages[view.attributes.data.slug]
 
     json = JSON.stringify(code, null, 2)
-    formatted_code = hljs.highlight('json', json).value if hljs
+    formatted_code = window.hljs.highlight('json', json).value if window.hljs
     $('#code').html(formatted_code)
 
   stack_changed: (view) ->

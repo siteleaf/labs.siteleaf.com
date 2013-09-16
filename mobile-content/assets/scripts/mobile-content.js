@@ -127,8 +127,8 @@
         code = this.pages[view.attributes.data.slug];
       }
       json = JSON.stringify(code, null, 2);
-      if (hljs) {
-        formatted_code = hljs.highlight('json', json).value;
+      if (window.hljs) {
+        formatted_code = window.hljs.highlight('json', json).value;
       }
       return $('#code').html(formatted_code);
     };
