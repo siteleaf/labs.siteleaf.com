@@ -9,7 +9,6 @@ body
   font-family: $source
   font-size: $fs_normal
   background: #fff
-  padding-left: $sidebar_width
 
 *
   @include box-sizing(border-box)
@@ -88,6 +87,69 @@ a
     top: 3px
     left: -6px
 
+// Main header
+//============================================================
+.main-header
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 9999
+
+  .logo
+    background: url(/assets/images/logo.svg) no-repeat
+    background-size: contain
+    width: 44px
+    height: 63px
+    margin: 0.5em
+    text-indent: -9999px
+
+    a
+      display: block
+      width: 100%
+      height: 100%
+
+  p
+    position: absolute
+    left: 62px
+    top: 16px
+    font-size: 0.875em
+    margin-left: 1em
+    width: 15em
+
+// Main dropdown
+//============================================================
+.main-dropdown
+  z-index: 9999
+  cursor: pointer
+  position: fixed
+  left: 0
+  top: 0
+
+  .handle
+    border-radius: 50%
+    background: white
+    width: 3em
+    height: 3em
+    margin: 0.5em
+    color: $green
+    text-align: center
+
+    .icon
+      font-size: 1.5em
+      line-height: 2.25em
+
+  .menu
+    +clearfix
+    display: none
+    padding: 0em 1.5em 1em 1.125em
+
+  &:hover
+    .handle
+      +rotate(180deg)
+
+    .menu
+      display: block
+
 // Main sidebar
 //============================================================
 .main-sidebar
@@ -117,29 +179,40 @@ a
 
 // Labs nav
 //============================================================
-.labs-nav
-  margin-top: 2em
+.main-nav
+  .labs-list
+    li
+      margin-bottom: 1em
 
-  a
-    display: block
-    text-decoration: none
-    color: $text_dark
-    padding: 0.375em 0
+      a
+        text-decoration: none
+        color: $text_dark
 
-  .ss-icon
-    @extend %smallNavIcon
-    margin-right: 5px
+    .icon
+      @extend %smallNavIcon
+      margin-right: 5px
 
+      & + .title
+        position: relative
+        top: 1px
 
+.labs-list-wrapper
+  position: fixed
+  width: 100%
+  height: 100%
 
-// Main content
+.labs-list
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-left: -48px
+  margin-top: -48px
+
+  .icon
+    @extend %largeNavIcon
+
+// Main footer
 //============================================================
-.main-content
-  position: relative
-  padding: $gutter
-  width: 90%
-  margin: auto
-  max-width: 1200px
 
 .main-footer
   position: absolute

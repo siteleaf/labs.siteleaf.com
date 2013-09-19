@@ -2,7 +2,8 @@
 @import '_variables'
 
 .main-content
-  min-width: 800px
+  position: relative
+  min-width: 1020px
 
 .app-view
   .app-back-button
@@ -11,6 +12,10 @@
   &.is-home
     .app-back-button
       opacity: 0
+
+  &.is-loading
+    .app-header
+      background: url(/assets/images/bg-loader.gif)
 
 .app-header
   background-color: $blue
@@ -123,27 +128,25 @@
 
 .device-section
   position: relative
-  right: 12em
+  top: 4em
+  right: 18em
   width: 40em
   margin: 0 auto
 
 .code-aside
-  position: fixed
+  position: absolute
   top: 0
   right: 0
-  width: 24em
-  height: 100%
-  padding: 1em
-  background-color: #002B36
-  color: $text_light
+  width: 38em
+  padding: 0.4em 2em 2em 2em
+  min-height: 100%
 
   pre
     margin: 0
     line-height: 0
-    height: 100%
+    font-size: 0.875em
     word-wrap: break-word
 
     code
-      height: 100%
-      font-size: 0.875em
+      font-family: monospace, serif
       line-height: 1.5em

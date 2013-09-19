@@ -67,7 +67,8 @@
 
     AppView.prototype.elements = {
       '.app-header h1': 'title',
-      '.app-back-button': 'backButton'
+      '.app-back-button': 'backButton',
+      '.app-nav .nav-list': 'navList'
     };
 
     AppView.prototype.events = {
@@ -100,6 +101,7 @@
 
     AppView.prototype.setData = function(data) {
       var page, view, _i, _j, _len, _len1, _ref3, _ref4;
+      this.el.removeClass('is-loading');
       this.data = data;
       this.homeData = $.extend(true, {}, this.data);
       this.pages = {};
@@ -122,6 +124,7 @@
         this.stack[page.slug] = view;
         this.stack.add(view);
         view.html("<h3>" + page.title + "</h3>" + page.body);
+        this.navList.append("<li class='nav-item' data-slug='" + page.slug + "'>          <span class='title'>" + page.title + "</span>          <span class='arrow ss-navigateright'></span>        </li>");
       }
       return this.updateCode(this.stack.home);
     };
@@ -175,6 +178,7 @@
   $(document).ready(function() {
     var _this = this;
     this.app = new AppView;
+    this.app.el.addClass('is-loading');
     return $.ajax('/mobile-content/en.json').done(function(data) {
       _this.data = data;
       return _this.app.setData(data);

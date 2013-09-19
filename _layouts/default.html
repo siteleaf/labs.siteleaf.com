@@ -10,7 +10,7 @@
     <meta property="twitter:site" content="{{ site.meta.twitter }}">
     <meta name='description' content='{{ site.meta.description }}'>
 
-    <link rel='icon shortcut' href='/images/favicon.ico'>
+    <link rel='icon shortcut' href='/assets/images/favicon.ico'>
 
     <link type="application/rss+xml" rel="alternate" title="{{ site.title }}" href="feed.xml">
     {% include 'includes/fonts' %}
@@ -24,22 +24,10 @@
   </head>
 
   <body class='{{ type }}'>
-    <aside class='main-sidebar'>
-      <h1 class='logo'><a href='/'>Siteleaf</a></h1>
+    <header class='main-header'>
+      <h1 class='logo'><a href='http://siteleaf.com'>Siteleaf</a></h1>
       {{ site.meta.siteleaf-description | md }}
-      <nav class="labs-nav">
-        {% for page in site.pages %}
-          <a href='{{ page.url }}'{% if slug == page.slug || slug == parent.slug %} class="is-current"{% endif %}>
-            <span class="ss-icon ss-gizmo"{% if page.meta.color %} style="background-color:{{ page.meta.color }}"{% endif %}>{{ page.meta.icon | fallback: 'file' }}</span>
-            {{ page.title }}
-          </a>
-        {% endfor %}
-      </nav>
-
-      <footer class='main-footer'>
-        &copy; {{ site.date | date: '%Y' }} Siteleaf&reg; is a registered trademark of Oak Studios, LLC.
-      </footer>
-    </aside>
+    </header>
 
     <section class="main-content">
       {{ content }}
@@ -48,3 +36,4 @@
     <script src="//cdn.symbolset.com/{{ site.meta.symbolset }}/symbolset.js"></script>
   </body>
 </html>
+

@@ -34,7 +34,7 @@
     width: 100%; height: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url("/images/devices/macbook/macbook.png");
+    background-image: url("/assets/images/devices/macbook/macbook.png");
   }
 
     .device-mockup > .device > .screen {
@@ -67,7 +67,7 @@
 }
 
 .device-mockup.imac > .device {
-  background-image: url("/images/devices/imac/imac.png");
+  background-image: url("/assets/images/devices/imac/imac.png");
 }
 
 .device-mockup.imac > .device > .screen {
@@ -81,7 +81,7 @@
 }
 
 .device-mockup.macbook > .device {
-  background-image: url("/images/devices/macbook/macbook.png");
+  background-image: url("/assets/images/devices/macbook/macbook.png");
 }
 
 .device-mockup.macbook > .device > .screen {
@@ -102,21 +102,21 @@
 .device-mockup.iphone5 > .device,
 .device-mockup.iphone5.black > .device,
 .device-mockup.iphone5.portrait.black > .device {
-  background-image: url("/images/devices/iphone5/iphone5_port_black.png");
+  background-image: url("/assets/images/devices/iphone5/iphone5_port_black.png");
 }
 
 .device-mockup.iphone5.landscape > .device,
 .device-mockup.iphone5.landscape.black > .device {
-  background-image: url("/images/devices/iphone5/iphone5_land_black.png");
+  background-image: url("/assets/images/devices/iphone5/iphone5_land_black.png");
 }
 
 .device-mockup.iphone5.white > .device,
 .device-mockup.iphone5.portrait.white > .device {
-  background-image: url("/images/devices/iphone5/iphone5_port_white.png");
+  background-image: url("/assets/images/devices/iphone5/iphone5_port_white.png");
 }
 
 .device-mockup.iphone5.landscape.white > .device {
-  background-image: url("/images/devices/iphone5/iphone5_land_white.png");
+  background-image: url("/assets/images/devices/iphone5/iphone5_land_white.png");
 }
 
 .device-mockup.iphone5 > .device > .screen,
@@ -153,21 +153,21 @@
 .device-mockup.ipad > .device,
 .device-mockup.ipad.black > .device,
 .device-mockup.ipad.portrait.black > .device {
-  background-image: url("/images/devices/ipad/ipad_port_black.png");
+  background-image: url("/assets/images/devices/ipad/ipad_port_black.png");
 }
 
 .device-mockup.ipad.white > .device,
 .device-mockup.ipad.portrait.white > .device {
-  background-image: url("/images/devices/ipad/ipad_port_white.png");
+  background-image: url("/assets/images/devices/ipad/ipad_port_white.png");
 }
 
 .device-mockup.ipad.landscape > .device,
 .device-mockup.ipad.landscape.black > .device {
-  background-image: url("/images/devices/ipad/ipad_land_black.png");
+  background-image: url("/assets/images/devices/ipad/ipad_land_black.png");
 }
 
 .device-mockup.ipad.landscape.white > .device {
-  background-image: url("/images/devices/ipad/ipad_land_white.png");
+  background-image: url("/assets/images/devices/ipad/ipad_land_white.png");
 }
 
 .device-mockup.ipad > .device > .screen,
@@ -204,21 +204,21 @@
 .device-mockup.s3 > .device,
 .device-mockup.s3.black > .device,
 .device-mockup.s3.portrait.black > .device {
-  background-image: url("/images/devices/galaxy_s3/s3_port_black.png");
+  background-image: url("/assets/images/devices/galaxy_s3/s3_port_black.png");
 }
 
 .device-mockup.s3.landscape > .device,
 .device-mockup.s3.landscape.black > .device {
-  background-image: url("/images/devices/galaxy_s3/s3_land_black.png");
+  background-image: url("/assets/images/devices/galaxy_s3/s3_land_black.png");
 }
 
 .device-mockup.s3.white > .device,
 .device-mockup.s3.portrait.white > .device {
-  background-image: url("/images/devices/galaxy_s3/s3_port_white.png");
+  background-image: url("/assets/images/devices/galaxy_s3/s3_port_white.png");
 }
 
 .device-mockup.s3.landscape.white > .device {
-  background-image: url("/images/devices/galaxy_s3/s3_land_white.png");
+  background-image: url("/assets/images/devices/galaxy_s3/s3_land_white.png");
 }
 
 .device-mockup.s3 > .device > .screen,
@@ -243,11 +243,11 @@
 
 .device-mockup.lumia920 > .device,
 .device-mockup.lumia920.portrait > .device {
-  background-image: url("/images/devices/lumia920/lumia920_port.png");
+  background-image: url("/assets/images/devices/lumia920/lumia920_port.png");
 }
 
 .device-mockup.lumia920.landscape > .device {
-  background-image: url("/images/devices/lumia920/lumia920_land.png");
+  background-image: url("/assets/images/devices/lumia920/lumia920_land.png");
 }
 .device-mockup.lumia920 > .device > .screen,
 .device-mockup.lumia920.portrait > .device > .screen {
@@ -271,11 +271,11 @@
 
 .device-mockup.nexus7 > .device,
 .device-mockup.nexus7.portrait > .device {
-  background-image: url("/images/devices/nexus7/nexus7_port.png");
+  background-image: url("/assets/images/devices/nexus7/nexus7_port.png");
 }
 
 .device-mockup.nexus7.landscape > .device {
-  background-image: url("/images/devices/nexus7/nexus7_land.png");
+  background-image: url("/assets/images/devices/nexus7/nexus7_land.png");
 }
 
 .device-mockup.nexus7 > .device > .screen,
@@ -296,7 +296,7 @@
 
 .device-mockup.surface > .device,
 .device-mockup.surface.landscape > .device {
-  background-image: url("/images/devices/surface/surface.png");
+  background-image: url("/assets/images/devices/surface/surface.png");
 }
 
 .device-mockup.surface > .device > .screen,

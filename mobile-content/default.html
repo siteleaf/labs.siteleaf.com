@@ -14,7 +14,7 @@
   <section class='device-section iphone5-wrapper'>
     <div class='device-mockup iphone5 portrait white'>
       <div class='device'>
-        <div id='app-view' class='screen is-home app-view'>
+        <div id='app-view' class='screen app-view is-home'>
           <header class='app-header'>
             <h1>Support</h1>
             <a class='app-back-button back ss-navigateleft' href='#'></a>
@@ -24,9 +24,6 @@
               <section id='home-view' class='app-section app-section-home' data-title='Support'>
                 <nav class='app-nav'>
                   <ul class='nav-list'>
-                    {% for page in pages %}
-                    <li class='nav-item' data-slug='{{ page.slug }}'><span class='title'>{{ page.title }}</span><span class='arrow ss-navigateright'></span></li>
-                    {% endfor %}
                   </ul>
                 </nav>
               </section>

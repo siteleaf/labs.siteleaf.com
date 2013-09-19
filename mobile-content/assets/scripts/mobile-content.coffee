@@ -27,6 +27,7 @@ class AppView extends Spine.Controller
   elements:
     '.app-header h1': 'title'
     '.app-back-button': 'backButton'
+    '.app-nav .nav-list': 'navList'
   events:
     'click .app-back-button': 'back_clicked'
     'click #home-view .nav-item': 'navItem_clicked'
@@ -49,6 +50,8 @@ class AppView extends Spine.Controller
     @stack.manager.bind('change', (view) => @stack_changed(view))
 
   setData: (data) ->
+    @el.removeClass('is-loading')
+
     @data = data
     @homeData = $.extend(true, {}, @data);
     @pages = {}
@@ -70,6 +73,12 @@ class AppView extends Spine.Controller
       @stack[page.slug] = view
       @stack.add(view)
       view.html("<h3>#{page.title}</h3>#{page.body}")
+
+      @navList.append(
+        "<li class='nav-item' data-slug='#{page.slug}'>
+          <span class='title'>#{page.title}</span>
+          <span class='arrow ss-navigateright'></span>
+        </li>")
 
     @updateCode(@stack.home)
 
@@ -109,6 +118,7 @@ class AppView extends Spine.Controller
 
 $(document).ready ->
   @app = new AppView
+  @app.el.addClass('is-loading')
 
   $.ajax('/mobile-content/en.json').done((data) =>
     @data = data

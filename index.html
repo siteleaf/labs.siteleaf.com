@@ -1,15 +1,15 @@
 {% capture content %}
-<nav class='main-nav'>
-  <ul class='main-nav-list'>
-    {% for page in site.pages %}
-    {% if page != site.pages.first %}
+<div class='labs-list-wrapper'>
+  <ul class='labs-list'>
+  {% for page in site.pages %}
+    {% unless page.slug == 'home' %}
     <li>
-      <a href='{{ page.url }}'>{{ page.title }}</a>
+      <a class="icon ss-icon ss-gizmo"{% if page.meta.color %} style="background-color:{{ page.meta.color }}"{% endif %} href='{{ page.url }}'{% if slug == page.slug || slug == parent.slug %} class="is-current"{% endif %}>{{ page.meta.icon | fallback: 'file' }}</a>
     </li>
-    {% endif %}
-    {% endfor %}
+    {% endunless %}
+  {% endfor %}
   </ul>
-</nav>
+</div>
 {% endcapture %}
 
 {% include 'layouts/default' %}
