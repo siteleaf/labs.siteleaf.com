@@ -24,7 +24,7 @@
   </head>
 
   <body class='{{ type }}'>
-    <header class='main-header'>
+    <header class='main-header{% if meta.fixed-header? %} fixed{% endif %}'>
       <h1 class='logo'><a href='http://siteleaf.com'>Siteleaf</a></h1>
       {{ site.meta.siteleaf-description | md }}
     </header>
