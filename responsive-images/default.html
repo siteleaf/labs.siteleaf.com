@@ -1,0 +1,37 @@
+{% capture head %}
+<link href='/assets/styles/github.css' rel='stylesheet'>
+<link href='/assets/styles/{{ slug }}.css' rel='stylesheet'>
+<script src='/assets/scripts/libs/rainbow.js'></script>
+<script src='/assets/scripts/libs/picturefill.js'></script>
+{% endcapture %}
+
+{% capture content %}
+<section class="image-section">
+{% for asset in assets %}
+  {% if asset.meta.responsive? %}
+  <span data-picture data-alt="{{ asset.meta.caption }}">
+    <span data-src="{{ asset.url }}"></span>
+    <span data-src="{{ asset.meta.url-400 }}" data-media="(min-width: 400px)"></span>
+    <span data-src="{{ asset.meta.url-800 }}" data-media="(min-width: 800px)"></span>
+    <span data-src="{{ asset.meta.url-1000 }}" data-media="(min-width: 1000px)"></span>
+    <span data-src="{{ asset.meta.url-1500 }}" data-media="(min-width: 1500px)"></span>
+    <noscript>
+      <img src="{{ asset.url }}" alt="{{ asset.meta.caption }}">
+    </noscript>
+  </span>
+  {% endif %}
+{% endfor %}
+</section>
+{% endcapture %}
+
+{% capture footer %}
+<footer class='code-footer'>
+  <h3>{{ title }}</h3>
+  {{ body }}
+  <pre>
+    <code id='code' data-language='html'>{{ meta.code }}</code>
+  </pre>
+</footer>
+{% endcapture %}
+
+{% include 'layouts/default' %}

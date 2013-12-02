@@ -150,6 +150,11 @@ a
     .menu
       display: block
 
+// Main content
+//============================================================
+.main-content
+  position: relative
+
 // Main sidebar
 //============================================================
 .main-sidebar
@@ -203,10 +208,16 @@ a
 
 .labs-list
   position: absolute
+  float: left
   top: 50%
   left: 50%
-  margin-left: -48px
   margin-top: -48px
+
+  li
+    position: relative
+    float: left
+    right: 50%
+    margin: 1em
 
   .icon
     @extend %largeNavIcon
@@ -215,19 +226,24 @@ a
 //============================================================
 
 .main-footer
-  position: absolute
-  left: 1em
-  right: 1em
-  bottom: 0
-  clear: both
-  display: block
-  font-size: 0.875em
-  text-align: center
-  padding: 2em 0
-  color: $text_light
+  margin: 1em
 
 
 // device
 //============================================================
 .iphone5-wrapper
   max-width: 418px
+
+
+// code
+//============================================================
+
+pre
+  margin: 0
+  line-height: 0
+  font-size: 0.875em
+  word-wrap: break-word
+
+  code
+    font-family: monospace, serif
+    line-height: 1.5em
