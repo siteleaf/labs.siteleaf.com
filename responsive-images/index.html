@@ -1,0 +1,108 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+
+    <title>Siteleaf Labs - Responsive Images</title>
+
+    <meta property="twitter:site" content="siteleaf">
+    <meta name='description' content='Experiments with Siteleaf'>
+
+    <link rel='icon shortcut' href='/assets/images/favicon.ico'>
+
+    <link type="application/rss+xml" rel="alternate" title="Siteleaf Labs" href="feed.xml">
+    <script type="text/javascript">
+  (function() {
+    var config = {
+      kitId: 'tti2qoh',
+      scriptTimeout: 3000
+    };
+    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+  })();
+</script>
+
+    <link href="//cdn.symbolset.com/6da0b71c3c19d310245c6d35de540534026d3f04/symbolset.css" rel="stylesheet">
+    <link href='/assets/styles/screen.css' rel='stylesheet'>
+
+    <script src="//use.typekit.net/tti2qoh.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    
+<link href='/assets/styles/github.css' rel='stylesheet'>
+<script src='/assets/scripts/libs/rainbow.js'></script>
+<script src='/assets/scripts/libs/picturefill.js'></script>
+
+  </head>
+
+  <body class='page'>
+    <header class='main-header'>
+      <h1 class='logo'><a href='http://siteleaf.com'>Siteleaf</a></h1>
+      <p><a href="http://siteleaf.com">Siteleaf</a> is a new, simple approach to content management.</p>
+
+    </header>
+
+    <section class="main-content">
+      
+<section class="image-section">
+
+  
+
+  
+
+  
+
+  
+
+  
+  <span data-picture data-alt="This is my desk.">
+    <span data-src="/assets/responsive-image.jpg"></span>
+    <span data-src="/assets/responsive-image-400.jpg" data-media="(min-width: 400px)"></span>
+    <span data-src="/assets/responsive-image-800.jpg" data-media="(min-width: 800px)"></span>
+    <span data-src="/assets/responsive-image-1000.jpg" data-media="(min-width: 1000px)"></span>
+    <span data-src="/assets/responsive-image-1500.jpg" data-media="(min-width: 1500px)"></span>
+    <noscript>
+      <img src="/assets/responsive-image.jpg" alt="This is my desk.">
+    </noscript>
+  </span>
+  
+
+</section>
+
+    </section>
+
+    <footer class="main-footer">
+      
+<footer class='code-footer'>
+  <h3>Responsive Images</h3>
+  <p>This demo uses asset metadata in <a href="http://siteleaf.com">Siteleaf</a> and <a href="https://github.com/scottjehl/picturefill">PictureFill</a> to swap out images based on the window width.</p>
+
+<p><a href="https://github.com/siteleaf/labs.siteleaf.net/tree/master/responsive-images">View the source code on Github</a></p>
+
+  <pre>
+    <code id='code' data-language='html'><span data-picture data-alt="{{ asset.meta.caption }}">
+  <span data-src="{{ asset.url }}"></span>
+  <span data-src="{{ asset.meta.url-400 }}" data-media="(min-width: 400px)"></span>
+  <span data-src="{{ asset.meta.url-800 }}" data-media="(min-width: 800px)"></span>
+  <span data-src="{{ asset.meta.url-1000 }}" data-media="(min-width: 1000px)"></span>
+  <span data-src="{{ asset.meta.url-1500 }}" data-media="(min-width: 1500px)"></span>
+  <noscript>
+    <img src="{{ asset.url }}" alt="{{ asset.meta.caption }}">
+  </noscript>
+</span></code>
+  </pre>
+</footer>
+
+    </footer>
+    <script src="//cdn.symbolset.com/6da0b71c3c19d310245c6d35de540534026d3f04/symbolset.js"></script>
+  </body>
+</html>
+
+

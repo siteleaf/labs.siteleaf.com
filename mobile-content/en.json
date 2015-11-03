@@ -1,0 +1,46 @@
+
+
+{
+  "last_updated": "2015-11-03 12:55:31 -0500",
+  "phone": "1-866-990-9-OAK",
+  "email": "team@siteleaf.com",
+  "pages": [
+    
+    {
+      "title": "What is Siteleaf?",
+      "slug": "what-is-siteleaf",
+      "body": "\u003cp\u003eSiteleaf is a content management system that publishes static files.\u003c/p\u003e\n"
+    },
+    
+    {
+      "title": "Where does Siteleaf publish?",
+      "slug": "where-does-siteleaf-publish",
+      "body": "\u003cp\u003eSiteleaf can publish to FTP, Amazon S3, Rackspace Cloud Files, or Siteleaf\u0026rsquo;s own free CDN hosting.\u003c/p\u003e\n"
+    },
+    
+    {
+      "title": "Which template system does Siteleaf use?",
+      "slug": "which-template-system-does-siteleaf-use",
+      "body": "\u003cp\u003eSiteleaf uses Shopify\u0026rsquo;s Liquid templating engine.\u003c/p\u003e\n"
+    },
+    
+    {
+      "title": "Which websites are built with Siteleaf?",
+      "slug": "which-websites-are-built-with-siteleaf",
+      "body": "\u003cp\u003eHere is a list of websites built with Siteleaf:\u003c/p\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"http://siteleaf.com\"\u003eSiteleaf.com marketing site\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"http://destroytoday.com\"\u003eDestroy Today\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"http://cafejonnie.com\"\u003eCafé Jonnie\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"http://sawyerh.com\"\u003eSawyer Hollenshead\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"http://barlawrence.com\"\u003eBar Lawrence\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"http://newswordy.com\"\u003eNewswordy\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"
+    },
+    
+    {
+      "title": "What is Siteleaf's stack?",
+      "slug": "what-is-siteleafs-stack",
+      "body": "\u003cp\u003eSiteleaf is written in Ruby. The web app is built on the \u003ca href=\"http://sinatrarb.com\"\u003eSinatra\u003c/a\u003e framework and its API is built on \u003ca href=\"http://intridea.github.io/grape/\"\u003eGrape\u003c/a\u003e.\u003c/p\u003e\n"
+    },
+    
+    {
+      "title": "Is it true that Sawyer is only 16 years old?",
+      "slug": "is-it-true-that-sawyer-is-only-16-years-old",
+      "body": "\u003cp\u003e\u003cimg src=\"/assets/sawyer.jpg\" alt=\"sawyer\"\u003e \u003c/p\u003e\n\n\u003cp\u003eSawyer claims he is 23 years old, but we\u0026rsquo;ve never seen a birth certificate.\u003c/p\u003e\n"
+    }
+    
+  ]
+}
